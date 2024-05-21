@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--toastify.js-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--FontAwensome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/output.css" />
+    <title>Hamburgueria</title>
+  </head>
+
+  <body>
+    <header class="w-full h -[420px] bg-zinc-900 bg-home bg-cover bg-center">
+      <div class="w-full h-full flex flex-col justify-center items-center">
+        <img
+          src="./assets/logo.png"
+          alt="logo hamburgueria"
+          class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200 mt-12"
+        />
+        <h1 class="text-4xl mt-4 mb-2 font-bold text-gray-200 tracking-widest">
+          Best Burger
+        </h1>
+        <span class="text-gray-100 font-medium tracking-widest"
+          >Av Principal, Rua 5, São Paulo - Sp</span
+        >
+
+        <div class="bg-blue-600 px-4 py-1 rounded-lg mt-4 mb-8" id="hours-open">
+          <span class="text-white text-sm font-semibold tracking-wide">
+            Seg à Dom - 18:00 - 23:00
+          </span>
+        </div>
+      </div>
+    </header>
+    <h2
+      class="text-red-700 text-2xl md:text-3xl font-bold text-center mt-9 mb-6"
+    >
+      Conheça nosso cardápio
+    </h2>
+    <div id="menu">
+      <main
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-1.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">X-Salada</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, Burger 160g, Alface,
+              Queijo prato e maionese da casa
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 28,90</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="X-Salada"
+                data-price="28.90"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-2.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">Smash Burger Duplo</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burger Duplo 160g,
+              queijo prato e maionese da casa
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 25,90</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Smash Burger Duplo"
+                data-price="25.90"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-3.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">Cheese Burger</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burger 160g, queijo
+              prato e maionese da casa
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 15,90</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Cheese Burger"
+                data-price="15.90"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-4.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">Hamburguer Smash</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burger 160g, queijo
+              prato e maionese da casa e Cebola
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 18,90</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Hamburguer Smash"
+                data-price="18.90"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-5.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">Cheese Burger da Casa</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigo, burger 160g, queijo
+              prato e maionese da casa, Bacon e Cebola
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 38,90</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Cheese Burger da Casa"
+                data-price="38.90"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2">
+          <img
+            src="./assets/hamb-6.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div>
+            <p class="font-bold">Hamburguer Smash Fritas</p>
+            <p class="text-sm">
+              Pão levinho de fermentação natural da Trigou, burger 160g, queijo
+              prato e maionese da casa, com porção media de fritas
+            </p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 35,90</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Hamburguer Smash Fritas"
+                data-price="35.90"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2
+          class="text-red-700 text-2xl md:text-3xl font-bold text-center mt-8 mb-8"
+        >
+          Bebidas
+        </h2>
+      </div>
+
+      <!--Grid bebidas-->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/agua.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div class="w-full">
+            <p class="font-bold">Agua Mineral</p>
+            <p class="text-sm">350 ml</p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 5,00</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Agua Mineral"
+                data-price="5.00"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/coca.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div class="w-full">
+            <p class="font-bold">Coca Cola</p>
+            <p class="text-sm">350 ml</p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 7,00</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Coca Colas"
+                data-price="7.00"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/fantauva.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div class="w-full">
+            <p class="font-bold">Fanta Uva</p>
+            <p class="text-sm">350 ml</p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 7,00</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Fanta Uva"
+                data-price="7.00"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/sucolaranja.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div class="w-full">
+            <p class="font-bold">Suco laranja</p>
+            <p class="text-sm">Suco de Laranja Natural</p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 9,00</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Suco laranja"
+                data-price="9.00"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/sucomorango.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div class="w-full">
+            <p class="font-bold">Suco Morango</p>
+            <p class="text-sm">Suco de Polpa de Morango</p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 9,00</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Suco Morango"
+                data-price="9.00"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/sucolimao.png"
+            alt=""
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+          <div class="w-full">
+            <p class="font-bold">Suco Limao</p>
+            <p class="text-sm">Suco de Limão Natural</p>
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg text-red-600">R$ 9,00</p>
+              <button
+                class="bg-blue-950 px-5 rounded add-to-cart-btn"
+                data-name="Suco Limao"
+                data-price="9.00"
+              >
+                <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Fim Grid bebidas-->
+    </div>
+    <!--Modal Card-->
+    <div
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[90] items-center justify-center hidden"
+      id="card-modal"
+    >
+      <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+        <h2 class="text-center text-2xl mb-2 font-bold text-blue-950">
+          Meu carrinho
+          <i class="fa-solid fa-cart-plus text-lg text-blue-950"></i>
+        </h2>
+
+        <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+        <p class="font-bold text-center text-lg">
+          Total:
+          <span class="text-red-600" id="cart-total">0.00</span>
+        </p>
+        <p class="font-bold mt-4">Endereço para entrega:</p>
+        <input
+          type="text"
+          placeholder="Cep"
+          id="cep"
+          class="w-auto border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-600 hidden" id="cep-warn">Digite seu Cep !!!</p>
+        <input
+          type="text"
+          placeholder="Digite seu endereço completo"
+          id="adrress"
+          class="w-full border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-600 hidden" id="adrress-warn">
+          Digite seu endereço completo!!!
+        </p>
+        <input
+          type="text"
+          placeholder="Bairro"
+          id="country"
+          class="w-full border-2 p-1 rounded my-1"
+        />
+        <input
+          type="text"
+          placeholder="Numero"
+          id="number"
+          class="w-auto border-2 p-1 rounded my-1"
+        />
+
+        <div class="flex items-center justify-between mt-5 w-full">
+          <button
+            id="closed-modal-btn"
+            class="bg-red-600 font-semibold text-white px-4 py-1 hover:opacity-80 rounded"
+          >
+            Fechar
+          </button>
+          <button
+            id="checkout-btn"
+            class="bg-green-600 font-semibold text-white px-4 py-1 hover:opacity-80 rounded"
+          >
+            Finalizar Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--Button cart footer-->
+    <footer
+      class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center"
+    >
+      <button
+        class="flex items-center gap-2 text-white font-bold"
+        id="cart-btn"
+      >
+        (<span id="cart-count">0</span>) Produtos no carrinho
+        <i class="fa-solid fa-cart-shopping text-lg text-white"></i>
+      </button>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
