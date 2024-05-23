@@ -45,7 +45,7 @@ menu.addEventListener("click", function (event) {
     //add no carrinho
     addToCart(name, price);
     Toastify({
-      text: `Produto ${name} foi add ao carrinho`,
+      text: `Produto ${name} ${price} foi add ao carrinho`,
       duration: 4000,
       close: true,
       gravity: "top", // `top` or `bottom`
@@ -136,14 +136,6 @@ const removeItemCart = (name) => {
 cep.addEventListener("blur", (infoEvent) => {
   const cep = infoEvent.target.value;
 
-  // if (cep !== "") {
-  //   cep.classList.remove("border-red-500");
-  //   cepWarn.classList.add("hidden");
-  //   if (cep === "") {
-  //     cepWarn.classList.remove("hidden");
-  //     cep.classList.add("border-red-500");
-  //   }
-  // }
   fetch(`https://viacep.com.br/ws/${cep}/json/`)
     .then((responseToSever) => {
       return responseToSever.json();
@@ -195,18 +187,24 @@ checkoutBtn.addEventListener("click", function () {
     }
     return;
   }
-
   const cartItems = cart
     .map((item) => {
-      return ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |
+      return ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} | 
       `;
     })
-    .join("");
-  const message = encodeURIComponent(cartItems);
-  const phone = ""; //add n° telefone
 
+    .join("");
+  const totalValue = cart
+    .reduce((acc, item) => acc + item.price * item.quantity, 0)
+    .toFixed(2);
+
+  const number = document.getElementById("number");
+  const message = encodeURIComponent(
+    `${cartItems} Valor Total: R$ ${totalValue}`
+  );
+  const phone = ""; //add n° telefone
   window.open(
-    `https://wa.me/${phone}?text=${message} Endereço: ${adrresInput.value}`,
+    `https://wa.me/${phone}?text=${message} Endereço: ${adrresInput.value} n° ${number.value}`,
     "_blank"
   );
   cart = [];
@@ -217,7 +215,7 @@ checkoutBtn.addEventListener("click", function () {
 checkRestaurantOpen = () => {
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 18 && hora < 23;
+  return hora >= 15 && hora < 23;
 };
 
 const spanItem = document.getElementById("hours-open");
