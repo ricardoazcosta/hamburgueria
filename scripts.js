@@ -45,7 +45,7 @@ menu.addEventListener("click", function (event) {
     //add no carrinho
     addToCart(name, price);
     Toastify({
-      text: `Produto ${name} ${price} foi add ao carrinho`,
+      text: `Produto ${name} R$${price} foi add ao carrinho`,
       duration: 4000,
       close: true,
       gravity: "top", // `top` or `bottom`
